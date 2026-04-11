@@ -1,0 +1,17 @@
+function CommentList({ comments }) {
+  if (comments.length === 0) {
+    return <p>No comments yet. Be the first to comment!</p>;
+  }
+
+  return (
+    <ul className="comment-list">
+      {comments.map(c => (
+        <li key={c.id}>
+          <strong>{c.name}</strong>: {c.body}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export default CommentList;
